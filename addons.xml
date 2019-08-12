@@ -1,11 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="skin.auramod" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt" version="0.9.22">
+<addons><addon id="repository.auramod" name="Auramod BETA repository" provider-name="skyfsza" version="1.0.1">
+	
+	<extension name="Auramod BETA repository" point="xbmc.addon.repository">
+		<info compressed="false">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Kodi repository for beta/test versions of the Auramod Skin</summary>
+		<description lang="en">Kodi repository for beta/test versions of the Auramod Skin. This repo is for test/beta versions of my work only</description>
+		<platform>all</platform>
+	</extension>
+</addon><addon id="repository.marcelveldt" name="Marcelveldt's BETA repository" provider-name="marcelveldt" version="1.0.1">
+	
+	<extension name="Marcelveldt's BETA repository" point="xbmc.addon.repository">
+		<info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Kodi repository for beta/test versions of Marcelveldt's addons</summary>
+		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
+		<platform>all</platform>
+	</extension>
+</addon><addon id="skin.auramod" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt" version="0.9.29">
     <requires>
         <import addon="xbmc.gui" version="5.14.0" />
         <import addon="repository.marcelveldt" version="1.0.1" />
         <import addon="script.skin.helper.service" version="1.1.24" />
         <import addon="script.skin.helper.widgets" version="1.0.0" />
-        <import addon="script.skinshortcuts" version="1.0.18" />
+        <import addon="script.skinshortcuts" version="1.0.20" />
         <import addon="script.extendedinfo" version="1.0.0" />
         <import addon="script.image.resource.select" version="0.0.5" />
         <import addon="plugin.program.autocompletion" version="1.0.1" />
@@ -33,16 +57,66 @@
             <screenshot>resources/screenshot-05.jpg</screenshot>
         </assets>
     </extension>
-</addon><addon id="repository.marcelveldt" name="Marcelveldt's BETA repository" provider-name="marcelveldt" version="1.0.1">
-	
-	<extension name="Marcelveldt's BETA repository" point="xbmc.addon.repository">
-		<info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
-	</extension>
+</addon><addon id="script.skinshortcuts" name="Skin Shortcuts" provider-name="BigNoid,marcelveldt,auramod,cartmandos" version="1.0.20">
+	<requires>
+		<import addon="xbmc.python" version="2.20.0" />
+		<import addon="script.module.simplejson" version="3.3.0" />
+		<import addon="script.module.unidecode" version="0.4.14" />
+	</requires>
+	<extension library="default.py" point="xbmc.python.library" />
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Kodi repository for beta/test versions of Marcelveldt's addons</summary>
-		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
+		<news>Template improvements and bug fixes</news>
+		<description lang="bg">Добавка за облици, която осигурява просто управление и списък с потребителски преки пътища (изисква поддръжка от облика)</description>
+		<description lang="de">Add-on für Skins für einfache Bearbeitung und Auflistung von benutzerdefinierten Verknüpfungen (erfordert Skin-Unterstützung)</description>
+		<description lang="el">Πρόσθετο για κελύφη, το οποίο παρέχει έναν απλό τρόπο διαχείρισης και κατηγοριοποίησης των συντομεύσεων του χρήστη (πρέπει να υποστηρίζεται από το κέλυφος)</description>
+		<description lang="en">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="en_NZ">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="en_US">Add-on for skins to provide simple managing and listing of user shortcuts (requires skin support)</description>
+		<description lang="es">Complemento para las pieles para proporcionar una gestión sencilla y lista de atajos de usuario (requiere que la piel lo soporte)</description>
+		<description lang="fr_CA">Addiciel pour habillages qui fournit une gestion simple et un listage des raccourcis utilisateurs (exige la prise en charge de l'habillage)</description>
+		<description lang="gl">Complemento que fornece aos temas dunha xestión sinxela dos atallos dos usuarios (require soporte do tema)</description>
+		<description lang="hr">Dodatak za presvlake koja omogućava jednostavno upravljanje i prikaz korisnikovih prečaca (zahtijeva podršku presvlake) </description>
+		<description lang="hu">Felszín kiegészítő amely könnyen kezelhetővé és listázhatóvá teszi a felhasználói parancsikonokat (Felszín támogatás szükséges)</description>
+		<description lang="is">Viðbót fyrir viðmót til að halda utan um flýtivísa og fá yfirlit yfir þá (þarfnast stuðnings frá viðmóti)</description>
+		<description lang="it">Add-on per gli skin per consentire un facile gestione ed elenco delle scorciatoie utente (richiede che lo skin lo supporti)</description>
+		<description lang="lt">Priedas teminėms išvaizdoms, kad jos turėtų galimybę paprastai tvarkyti ir atvaizduoti vartotojo  sukurtas nuorodas (reikalingas teminės išvaizdos palaikymas)</description>
+		<description lang="nl">Add-on voor skins om te voorzien in het eenvoudig beheren en sorteren van gebruikers snelkoppelingen (vereist skin ondersteuning)</description>
+		<description lang="no">Tillegg for enkel administrering og opplisting av bruker-snarveier i tema (krever støtte i tema)</description>
+		<description lang="pl">Wtyczka dla skór, która zapewnia proste zarządzanie i tworzenie list skrótów użytkownika (wymaga wsparcia skóry)</description>
+		<description lang="pt">Um add-on que permite que os temas tenham recursos simples para gerir e listar atalhos de utilizadores (é necessário suporte do tema)</description>
+		<description lang="pt_BR">Add-on para que as skins possam prover gerenciamento de lista de atalhos para o menu principal (requer suporte da skin)</description>
+		<description lang="ru">Дополнение для обложек, предоставляющее простой способ управления и список пользовательских ярлыков (требуется поддержка обложкой)</description>
+		<description lang="sv">Skinntillägg som tillhandahåller enkel hantering och översikt av användargenvägar (om skinnet stöder det)</description>
+		<description lang="zh">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
+		<language />
 		<platform>all</platform>
+		<license>GNU General Public License, v2</license>
+		<forum>http://forum.xbmc.org/showthread.php?tid=178294</forum>
+		<website />
+		<email />
+		<source>https://github.com/BigNoid/script.skinshortcuts</source>
+	<assets>
+		<icon>icon.png</icon>
+		<fanart>fanart.jpg</fanart>
+	</assets>
 	</extension>
+</addon><addon id="context.skinshortcuts.addtomenu" name="Skin Shortcuts - Add To Menu" provider-name="BobCratchett,auramod" version="1.0.1">
+  <requires>
+    <import addon="xbmc.python" version="2.20.0" />
+    <import addon="script.skinshortcuts" version="1.0.7" />
+  </requires>
+  <extension library="addon.py" point="kodi.context.item">
+    <item>
+      <label>32000</label>
+      <visible>!StringCompare(ListItem.Label,..) + ListItem.IsFolder</visible>
+    </item>
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Add folders to Skin Shortcuts managed menus</summary>
+    <description lang="en_GB">Add folders to Skin Shortcuts managed menus directly from the context menu. Requires skin support.</description>
+    <license>GNU General Public License, v2</license>
+    <forum />
+    <source>https://github.com/Ignoble61/context.skinshortcuts.addtomenu</source>
+  </extension>
 </addon></addons>
