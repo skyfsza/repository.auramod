@@ -1,5 +1,6 @@
 v1.0.20
 - Add Auramod My Lists to Context Menu
+- remove urlib.unquote for just select widgets path
 
 v1.0.13
 - Fix for context menu add-on
