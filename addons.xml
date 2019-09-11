@@ -1,7 +1,62 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="repository.marcelveldt" name="Marcelveldt's BETA repository" provider-name="marcelveldt" version="1.0.1">
-	
-	<extension name="Marcelveldt's BETA repository" point="xbmc.addon.repository">
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="context.skinshortcuts.addtomenu" name="Skin Shortcuts - Add To Menu" version="1.0.1" provider-name="BobCratchett,auramod">
+  <requires>
+    <import addon="xbmc.python" version="2.20.0"/>
+    <import addon="script.skinshortcuts" version="1.0.7"/>
+  </requires>
+  <extension point="kodi.context.item" library="addon.py">
+    <item>
+      <label>32000</label>
+      <visible>!StringCompare(ListItem.Label,..) + ListItem.IsFolder</visible>
+    </item>
+  </extension>
+  <extension point="kodi.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en_GB">Add folders to Skin Shortcuts managed menus</summary>
+    <description lang="en_GB">Add folders to Skin Shortcuts managed menus directly from the context menu. Requires skin support.</description>
+    <license>GNU General Public License, v2</license>
+    <forum></forum>
+    <source>https://github.com/Ignoble61/context.skinshortcuts.addtomenu</source>
+  </extension>
+</addon>
+
+<addon id="repository.auramod" version="1.0.1" name="Auramod BETA repository" provider-name="skyfsza">
+
+	<extension point="xbmc.addon.repository" name="Auramod BETA repository">
+		<info compressed="false">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml</info>
+		<checksum>https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Kodi repository for beta/test versions of the Auramod Skin</summary>
+		<description lang="en">Kodi repository for beta/test versions of the Auramod Skin. This repo is for test/beta versions of my work only</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.jurialmunkey" name="jurialmunkey Alpha Repository" version="1.2" provider-name="jurialmunkey">
+    <extension point="xbmc.addon.repository" name="jurialmunkey Alpha Repository">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>jurialmunkey Alpha Repository</summary>
+        <description>A repository for alpha releases of jurialmunkey's skins.</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="repository.marcelveldt" version="1.0.1" name="Marcelveldt's BETA repository" provider-name="marcelveldt">
+
+	<extension point="xbmc.addon.repository" name="Marcelveldt's BETA repository">
 		<info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
 		<datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
@@ -11,13 +66,96 @@
 		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
 		<platform>all</platform>
 	</extension>
-</addon><addon id="script.skinshortcuts" name="Skin Shortcuts" provider-name="BigNoid,marcelveldt,auramod,cartmandos" version="1.0.20">
+</addon>
+
+<addon id="script.module.metadatautils"
+       name="Metadata and Artwork module"
+       version="1.0.19"
+       provider-name="marcelveldt">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.requests" version="2.3.0"/>
+        <import addon="script.module.beautifulsoup" version="3.0.8" />
+        <import addon="script.module.thetvdb" version="0.0.1" />
+        <import addon="script.module.musicbrainz" version="0.0.1" />
+        <import addon="script.module.simplecache" version="1.0.0"/>
+        <import addon="script.module.arrow" version="0.6.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>Metadata and artwork from common sources like TMDB, IMDB, TADB and fanart.tv </summary>
+        <description>
+            The metadata and artwork module for Kodi provides rich metadata, including artwork for
+            various metatypes by scraping (and caching) this information from sites like TMDB, musicbrainz and fanart.tv.[CR][CR]
+            This product uses the TMDb API but is not endorsed or certified by TMDb
+        </description>
+        <license>Apache 2.0</license>
+        <source>https://github.com/marcelveldt/script.module.metadatautils</source>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+	<addon id="script.skin.helper.service" name="Skin Helper Service" version="1.1.24" provider-name="marcelveldt">
 	<requires>
-		<import addon="xbmc.python" version="2.20.0" />
-		<import addon="script.module.simplejson" version="3.3.0" />
-		<import addon="script.module.unidecode" version="0.4.14" />
+		<import addon="xbmc.python" version="2.13.0"/>
+		<import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.simplecache" version="1.0.0"/>
+        <import addon="script.module.metadatautils" version="1.0.0"/>
+        <import addon="script.module.cherrypy" version="11.0.0"/>
 	</requires>
-	<extension library="default.py" point="xbmc.python.library" />
+
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="resources\lib\context_animatedart.py">
+              <label>32024</label>
+              <visible>!IsEmpty(Window(Home).Property(SkinHelper.EnableAnimatedPosters)) + Container.Content(movies)</visible>
+            </item>
+            <item library="resources\lib\context_pvr.py">
+                <label>32023</label>
+                <description>PVR artwork Configuration</description>
+                <visible>
+                    !IsEmpty(Window(Home).Property(SkinHelper.EnablePvrThumbs)) +
+                    [Window.IsActive(MyPVRChannels.xml) |
+                    Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) |
+                    Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)]
+                </visible>
+            </item>
+            <item library="resources\lib\context_music.py">
+                <label>32023</label>
+                <description>Music artwork Configuration</description>
+                <visible>
+                    !IsEmpty(Window(Home).Property(SkinHelper.EnableMusicArt)) +
+                    [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]
+                </visible>
+            </item>
+        </menu>
+	</extension>
+
+    <extension point="xbmc.python.library" library="default.py" />
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+    </extension>
+	<extension library="service.py" point="xbmc.service" start="login" />
+
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Helper service for Kodi skins</summary>
+        <description>Helper service for Kodi skins</description>
+		<language></language>
+		<platform>all</platform>
+		<license>GPL v2.0</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
+		<website></website>
+		<source>https://github.com/marcelveldt/script.skin.helper.service</source>
+	</extension>
+</addon>
+
+<addon id="script.skinshortcuts" name="Skin Shortcuts" version="1.0.20" provider-name="BigNoid,marcelveldt,auramod,cartmandos">
+	<requires>
+		<import addon="xbmc.python" version="2.20.0"/>
+		<import addon="script.module.simplejson" version="3.3.0"/>
+		<import addon="script.module.unidecode" version="0.4.14"/>
+	</requires>
+	<extension point="xbmc.python.library" library="default.py"/>
 	<extension point="xbmc.addon.metadata">
 		<news>Template improvements and bug fixes</news>
 		<description lang="bg">Добавка за облици, която осигурява просто управление и списък с потребителски преки пътища (изисква поддръжка от облика)</description>
@@ -42,94 +180,44 @@
 		<description lang="ru">Дополнение для обложек, предоставляющее простой способ управления и список пользовательских ярлыков (требуется поддержка обложкой)</description>
 		<description lang="sv">Skinntillägg som tillhandahåller enkel hantering och översikt av användargenvägar (om skinnet stöder det)</description>
 		<description lang="zh">插件为皮肤提供了简单的管理和用户连接方式列表 (需要皮肤支持)</description>
-		<language />
+		<language></language>
 		<platform>all</platform>
 		<license>GNU General Public License, v2</license>
 		<forum>http://forum.xbmc.org/showthread.php?tid=178294</forum>
-		<website />
-		<email />
+		<website></website>
+		<email></email>
 		<source>https://github.com/BigNoid/script.skinshortcuts</source>
 	<assets>
 		<icon>icon.png</icon>
 		<fanart>fanart.jpg</fanart>
 	</assets>
 	</extension>
-</addon><addon id="script.skin.helper.service" name="Skin Helper Service" provider-name="marcelveldt" version="1.1.24">
-	<requires>
-		<import addon="xbmc.python" version="2.13.0" />
-		<import addon="xbmc.addon" version="12.0.0" />
-        <import addon="script.module.simplejson" version="3.3.0" />
-        <import addon="script.module.simplecache" version="1.0.0" />
-        <import addon="script.module.metadatautils" version="1.0.0" />
-        <import addon="script.module.cherrypy" version="11.0.0" />
-	</requires>
+</addon>
 
-    <extension point="kodi.context.item">
-        <menu id="kodi.core.main">
-            <item library="resources\lib\context_animatedart.py">
-              <label>32024</label>
-              <visible>!IsEmpty(Window(Home).Property(SkinHelper.EnableAnimatedPosters)) + Container.Content(movies)</visible>
-            </item>
-            <item library="resources\lib\context_pvr.py">
-                <label>32023</label>
-                <description>PVR artwork Configuration</description>
-                <visible>
-                    !IsEmpty(Window(Home).Property(SkinHelper.EnablePvrThumbs)) + 
-                    [Window.IsActive(MyPVRChannels.xml) | 
-                    Window.IsActive(MyPVRGuide.xml) | Window.IsActive(MyPVRRecordings.xml) | 
-                    Window.IsActive(MyPVRTimers.xml) | Window.IsActive(MyPVRSearch.xml)]
-                </visible>
-            </item>
-            <item library="resources\lib\context_music.py">
-                <label>32023</label>
-                <description>Music artwork Configuration</description>
-                <visible>
-                    !IsEmpty(Window(Home).Property(SkinHelper.EnableMusicArt)) + 
-                    [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]
-                </visible>
-            </item>
-        </menu>
-	</extension>
-
-    <extension library="default.py" point="xbmc.python.library" />
-	<extension library="plugin.py" point="xbmc.python.pluginsource">
-    </extension>
-	<extension library="service.py" point="xbmc.service" start="login" />
-
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Helper service for Kodi skins</summary>
-        <description>Helper service for Kodi skins</description>
-		<language />
-		<platform>all</platform>
-		<license>GPL v2.0</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
-		<website />
-		<source>https://github.com/marcelveldt/script.skin.helper.service</source>
-	</extension>
-</addon><addon id="skin.auramod" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt" version="0.9.29">
+<addon id="skin.auramod" version="0.9.32" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
     <requires>
-        <import addon="xbmc.gui" version="5.14.0" />
-        <import addon="repository.marcelveldt" version="1.0.1" />
-        <import addon="script.skin.helper.service" version="1.1.24" />
-        <import addon="script.skin.helper.widgets" version="1.0.0" />
-        <import addon="script.skinshortcuts" version="1.0.20" />
-        <import addon="script.extendedinfo" version="1.0.0" />
-        <import addon="script.image.resource.select" version="0.0.5" />
-        <import addon="plugin.program.autocompletion" version="1.0.1" />
-        <import addon="resource.images.studios.white" version="0.0.10" />
-        <import addon="resource.images.moviegenreicons.transparent" version="0.0.6" />
-        <import addon="resource.images.moviegenreicons.filmstrip" version="0.0.6" />
+        <import addon="xbmc.gui" version="5.14.0"/>
+        <import addon="repository.marcelveldt" version="1.0.1"/>
+        <import addon="script.skin.helper.service" version="1.1.24"/>
+        <import addon="script.skin.helper.widgets" version="1.0.0"/>
+        <import addon="script.skinshortcuts" version="1.0.20"/>
+        <import addon="script.extendedinfo" version="1.0.0"/>
+        <import addon="script.image.resource.select" version="0.0.5"/>
+        <import addon="plugin.program.autocompletion" version="1.0.1"/>
+        <import addon="resource.images.studios.white" version="0.0.10"/>
+        <import addon="resource.images.moviegenreicons.transparent" version="0.0.6"/>
+        <import addon="resource.images.moviegenreicons.filmstrip" version="0.0.6"/>
     </requires>
-    <extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="1080i" height="1080" width="1920" />
+    <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" debugging="false" effectslowdown="1">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Mod of aura ,  Minimalistic. Customisable. Multiple Widgets.</summary>
-        <description lang="en">Aura is highly customisable skin with multiple widgets and a horizontal home menu. Aura combines the minimalism and rounded edges of Arctic Zephyr with the sleek customisability of Horizon. Whilst the best Aura experience is had with a remote, Aura has been designed to accomodate mouse and touch users where possible.,  [COLOR cyan]Mods to Aura by skyfsza[/COLOR]</description>
+        <description lang="en">Aura is highly customisable skin with multiple widgets and a horizontal home menu. Aura combines the minimalism and rounded edges of Arctic Zephyr with the sleek customisability of Horizon and Titan Bingie. [COLOR cyan]Mods to Aura by skyfsza[/COLOR]</description>
         <platform>all</platform>
         <license>Creative Commons Attribution Non-Commercial Share-Alike 4.0</license>
-        <forum />
-        <source />
+        <forum/>
+        <source/>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -140,4 +228,5 @@
             <screenshot>resources/screenshot-05.jpg</screenshot>
         </assets>
     </extension>
-</addon></addons>
+</addon>
+</addons>
