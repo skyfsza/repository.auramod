@@ -194,7 +194,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.auramod" version="0.9.36" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
+<addon id="skin.auramod" version="0.9.36.6" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
     <requires>
         <import addon="xbmc.gui" version="5.14.0"/>
         <import addon="repository.marcelveldt" version="1.0.1"/>
