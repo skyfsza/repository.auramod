@@ -21,33 +21,6 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.autocompletion" name="AutoCompletion for virtual keyboard" version="1.0.1.1" provider-name="Philipp Temminghoff (phil65)">
-    <requires>
-        <import addon="xbmc.python" version="2.25.0" />
-        <import addon="script.module.simplejson" version="3.3.0"/>
-        <import addon="script.module.autocompletion" version="1.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="plugin.py" />
-    <extension point="xbmc.python.script"       library="default.py">
-        <provides>executable</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">AutoCompletion for the virtual keyboard (needs skin support) with tmdb as default provider</summary>
-        <description lang="en">AutoCompletion for the virtual keyboard (needs skin support) with tmdb as default provider , from bbaronSVK</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
-        <source>https://github.com/bbaronSVK/plugin.program.autocompletion</source>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
-            <screenshot>resources/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshot-03.jpg</screenshot>
-        </assets>
-    </extension>
-</addon>
-
 <addon id="repository.auramod" version="1.0.3" name="Auramod BETA repository" provider-name="skyfsza">
 
 	<extension point="xbmc.addon.repository" name="Auramod BETA repository">
@@ -93,22 +66,6 @@
 		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
 		<platform>all</platform>
 	</extension>
-</addon>
-
-<addon id="script.module.autocompletion" name="AutoCompletion library" version="1.1.2.1" provider-name="Philipp Temminghoff (phil65)">
-    <requires>
-        <import addon="xbmc.python" version="2.24.0" />
-        <import addon="script.module.simplejson" version="3.3.0"/>
-        <import addon="script.module.requests" version="2.9.1"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Module providing some AutoCompletion functions, with tmdb  provider</summary>
-        <description lang="en">Module providing some AutoCompletion functions with tmdb provider from bbaronSVK</description>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
-        <source>https://github.com/bbaronSVK/script.module.autocompletion</source>
-    </extension>
 </addon>
 
 <addon id="script.module.cherrypy"
