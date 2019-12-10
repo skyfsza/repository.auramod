@@ -21,17 +21,12 @@
   </extension>
 </addon>
 
-<addon id="repository.auramod" version="1.0.2" name="Auramod BETA repository" provider-name="skyfsza">
+<addon id="repository.auramod" version="1.0.3" name="Auramod BETA repository" provider-name="skyfsza">
 
 	<extension point="xbmc.addon.repository" name="Auramod BETA repository">
 		<info compressed="false">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml.md5</checksum>
 		<datadir zip="true">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/</datadir>
-	</extension>
-	<extension point="xbmc.addon.repository" name="Marcelveldt's BETA repository">
-		<info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/addons.xml</info>
-		<checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Kodi repository for beta/test versions of the Auramod Skin</summary>
@@ -71,6 +66,27 @@
 		<description lang="en">Kodi repository for beta/test versions of Marcelveldt's addons, for stable versions please just use the official Kodi repository. This repo is for test/beta versions of my work only</description>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="script.module.cherrypy"
+       name="CherryPy Kodi module"
+       version="11.0.1"
+       provider-name="marcelveldt, CherryPy Team">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.six" version="1.9.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary>CherryPy webserver packaged as Kodi module</summary>
+        <description>CherryPy is a pythonic, object-oriented web framework
+            CherryPy allows developers to build web applications in much the same way they would build any other object-oriented Python program. This results in smaller source code developed in less time.
+            CherryPy is now more than ten years old and it is has proven to be very fast and stable. It is being used in production by many sites, from the simplest to the most demanding.
+        </description>
+        <license>BSD</license>
+        <source>https://github.com/marcelveldt/script.module.cherrypy</source>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="script.module.metadatautils"
