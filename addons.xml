@@ -68,31 +68,10 @@
 	</extension>
 </addon>
 
-<addon id="script.module.cherrypy"
-       name="CherryPy Kodi module"
-       version="17.4.0"
-       provider-name="marcelveldt, TheTimeWalker, CherryPy Team">
-    <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
-        <import addon="script.module.six" version="1.9.0"/>
-    </requires>
-    <extension point="xbmc.python.module" library="lib" />
-    <extension point="xbmc.addon.metadata">
-        <summary>CherryPy webserver packaged as Kodi module</summary>
-        <description>CherryPy is a pythonic, object-oriented web framework
-            CherryPy allows developers to build web applications in much the same way they would build any other object-oriented Python program. This results in smaller source code developed in less time.
-            CherryPy is now more than ten years old and it is has proven to be very fast and stable. It is being used in production by many sites, from the simplest to the most demanding.
-        </description>
-        <license>BSD</license>
-        <source>https://github.com/marcelveldt/script.module.cherrypy</source>
-        <platform>all</platform>
-    </extension>
-</addon>
-
 <addon id="script.module.metadatautils"
        name="Metadata and Artwork module"
-       version="1.0.25"
-       provider-name="marcelveldt">
+       version="1.0.27"
+       provider-name="marcelveldt, finkleandeinhorn, cartmandos">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
         <import addon="script.module.requests" version="2.3.0"/>
@@ -111,7 +90,7 @@
             This product uses the TMDb API but is not endorsed or certified by TMDb
         </description>
         <license>Apache 2.0</license>
-        <source>https://github.com/marcelveldt/script.module.metadatautils</source>
+        <source>https://github.com/kodi-community-addons/script.module.metadatautils</source>
         <platform>all</platform>
     </extension>
 </addon>
@@ -123,7 +102,7 @@
         <import addon="script.module.simplejson" version="3.3.0"/>
         <import addon="script.module.simplecache" version="1.0.0"/>
         <import addon="script.module.metadatautils" version="1.0.0"/>
-        <import addon="script.module.cherrypy" version="17.4.0"/>
+        <import addon="script.module.cherrypy" version="11.0.1"/>
 	</requires>
 
     <extension point="kodi.context.item">
@@ -215,10 +194,11 @@
 	</extension>
 </addon>
 
-<addon id="skin.auramod" version="0.9.37.3" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
+<addon id="skin.auramod" version="0.9.38" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
     <requires>
         <import addon="xbmc.gui" version="5.14.0"/>
-        <import addon="repository.marcelveldt" version="1.0.1"/>
+        <import addon="repository.marcelveldt" version="1.0.2"/>
+        <import addon="repository.jurialmunkey" version="1.2"/>
         <import addon="script.skin.helper.service" version="1.1.24"/>
         <import addon="script.skin.helper.widgets" version="1.0.0"/>
         <import addon="script.skinshortcuts" version="1.0.20"/>
@@ -227,7 +207,6 @@
         <import addon="resource.images.studios.white" version="0.0.10"/>
         <import addon="resource.images.studios.coloured" version="0.0.18"/>
         <import addon="resource.images.moviegenreicons.transparent" version="0.0.6"/>
-        <import addon="resource.images.moviegenreicons.filmstrip" version="0.0.6"/>
     </requires>
     <extension point="xbmc.gui.skin" defaultthemename="Textures.xbt" debugging="false" effectslowdown="1">
         <res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
