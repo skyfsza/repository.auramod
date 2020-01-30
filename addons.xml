@@ -21,6 +21,55 @@
   </extension>
 </addon>
 
+<addon id="plugin.video.themoviedb.helper"
+version="2.2.48"
+name="TheMovieDb Helper"
+provider-name="jurialmunkey">
+<requires>
+  <import addon="xbmc.python" version="2.26.0"/>
+  <import addon="script.module.simplecache" version="1.0.11" />
+  <import addon="script.module.requests" version="2.9.1"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="plugin.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.service" library="service.py" />
+<extension point="xbmc.python.script" library="script.py" />
+<extension point="kodi.context.item">
+  <menu id="kodi.core.main">
+    <item library="context-watchlist.py">
+      <label>Add/Remove from Trakt Watchlist</label>
+      <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+    </item>
+    <item library="context-history.py">
+      <label>Add/Remove from Trakt History</label>
+      <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+    </item>
+    <item library="context-collection.py">
+      <label>Add/Remove from Trakt Collection</label>
+      <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow)]</visible>
+    </item>
+    <item library="context-library.py">
+      <label>Add to Kodi Library</label>
+      <visible>String.StartsWith(ListItem.path,plugin://plugin.video.themoviedb.helper/) + !String.IsEmpty(ListItem.Property(tmdb_id)) + [String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season)]</visible>
+    </item>
+  </menu>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en_GB">TheMovieDb Helper - Now With Trakt Support!</summary>
+  <description lang="en_GB">TheMovieDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb and Trakt.</description>
+  <disclaimer lang="en_GB">Provided by TheMovieDb and Trakt.</disclaimer>
+  <license>GPL-3.0</license>
+  <assets>
+    <icon>icon.png</icon>
+    <fanart>fanart.jpg</fanart>
+    <screenshot>resources/screenshot-01.jpg</screenshot>
+    <screenshot>resources/screenshot-02.jpg</screenshot>
+  </assets>
+  <news>2.2.48 - Remove TMDB/Fanart develop key expert options as children can't help but get their sticky fingers all over it even after being told not to touch[CR]2.2.47 - Better clearing of service monitor properties[CR]2.2.46 - Fix for fanarttv on episode widgets[CR]2.2.45 - Add option to show next page item on widgets[CR]2.2.44 - Potential fix for both strm and widget player resolve[CR]2.2.43 - Fix for mostwatched shows/movies not reaching limit[CR]2.2.42 - Fix for unwatched episode counts[CR]2.2.41 - Remove resolveurl to prevent crashing bug and add fixes for fanarttv: Episode artwork plus connection error loop[CR]2.2.39/40 - Add role to label2[CR]2.2.38 - Expand Trakt list limit option[CR]2.2.37 - Add throwaway var to attempt fix for _strptime import bug[CR]2.2.36 - Possible fix for old settings format log spam[CR]2.2.35 - Potential fix for datetime bug in py2[CR]2.2.34 - Fix for plugin failed to play error[CR]2.2.33 - Fix for context menu trakt management of tvshows[CR]2.2.32 - Fix for trakt collection url not resolving to details[CR]2.2.31 - Add option to disable folder creation check[CR]2.2.30 - Reattempt create filepath as possible fix for false failure report[CR]2.2.29 - Only skip TMDbHelper .strm files in local library[CR]2.2.28 - Add options for add to library path[CR]2.2.26/27 - Fixes for add to library[CR]2.2.25 - Formatting future episodes fix[CR]2.2.24 - Browse Trakt Collection[CR]2.2.23 - Add to Kodi Library function[CR]2.2.22 - Player now ignores strm files in local library[CR]2.2.21 - Improvements to In-Progress[CR]2.2.20 - Add option to hide unaired episodes/movies. Format unaired episode/movie labels to red italic[CR]2.2.19 - Additional artwork types from kodilibrary[CR]2.2.18 - Cleanup and clear some empty keys[CR]2.2.17 - Add person kodidb stats to service monitor[CR]2.2.16 - Fix service monitor for people[CR]2.2.14/5 - playmedia param for close dialog[CR]2.2.13 - Extra checks to prevent double adding[CR]2.2.11 - Add Rule improvements to Discover[CR]2.2.10 - Move stats to infoproperties[CR]2.2.9 - DB Stats for Person[CR]2.2.8 - Use select dialog instead of container for discover method[CR]2.2.7 - Add discover select boxes[CR]2.2.6 - Fix for unicode error in add_query params[CR]2.2.5 - Expose discover method for users[CR]2.2.4 - Cleanup for window manager service monitor[CR]2.2.3 - Add close dialog option[CR]2.2.2 - Add Gender Field[CR]2.2.1 - Additional Sets Properties[CR]2.2.0 - Call Auto method for handling extendedinfo experience</news>
+</extension>
+</addon>
+
 <addon id="repository.auramod" version="1.0.5" name="Auramod Repository" provider-name="skyfsza">
 
 	<extension point="xbmc.addon.repository" name="Auramod BETA repository">
@@ -170,6 +219,31 @@
 	</extension>
 </addon>
 
+	<addon id="script.skin.helper.widgets" name="Skin Helper Service Widgets" version="1.0.38" provider-name="marcelveldt,patrick-klein">
+	<requires>
+		<import addon="xbmc.python" version="2.24.0"/>
+		<import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="script.module.metadatautils" version="1.0.0" />
+        <import addon="script.module.simplecache" version="1.0.0"/>
+	</requires>
+
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video audio</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="login" />
+
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Ready to use widgets for all kind of media types</summary>
+        <description></description>
+		<language></language>
+		<platform>all</platform>
+		<license>GPL v2.0</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
+		<website></website>
+		<source>https://github.com/marcelveldt/script.skin.helper.widgets</source>
+	</extension>
+</addon>
+
 <addon id="script.skinshortcuts" name="Skin Shortcuts" version="1.0.20" provider-name="BigNoid,marcelveldt,auramod,cartmandos">
 	<requires>
 		<import addon="xbmc.python" version="2.20.0"/>
@@ -215,7 +289,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.auramod" version="0.9.39.2" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
+<addon id="skin.auramod" version="0.9.40" name="Aura[COLOR cyan]MOD[/COLOR]" provider-name="auramod,jurialmunkey,Cartmandos,marduklev,marcelveldt">
     <requires>
         <import addon="xbmc.gui" version="5.14.0"/>
         <import addon="repository.marcelveldt" version="1.0.2"/>
