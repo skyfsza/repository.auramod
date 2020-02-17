@@ -36,5 +36,3 @@ When Kodi asks if you wish to switch to AuraMOD, Accept!  Congratulations you in
 ---
 
 
- # If you wish to run the Development version of auramod. PLEASE follow the above instructions for installing the repo (steps 1 - 3) and ONLY after completing them  download the zip from this github page and then "install from zip" in kodi pointing it at the downloaded zip file . Use at your own Risk !
-
