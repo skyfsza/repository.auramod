@@ -1,4 +1,4 @@
-# Install Instructions
+# Install Instructions For AuraMod Skin
 
 1. **Add the file source for the repo**
 
