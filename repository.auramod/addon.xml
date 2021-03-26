@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.auramod" version="1.1.1" name="Auramod Repository" provider-name="skyfsza">
-    
-    <extension point="xbmc.addon.repository" name="Auramod BETA repository">
+    <extension point="xbmc.addon.repository" name="Auramod repository">
         <info compressed="false">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml</info>
         <checksum>https://raw.githubusercontent.com/skyfsza/repository.auramod/master/addons.xml.md5</checksum>
         <datadir zip="true">https://raw.githubusercontent.com/skyfsza/repository.auramod/master/</datadir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">Kodi repository for beta/test versions of the Auramod Skin & deps from Marcels repo before Matrix</summary>
-        <description lang="en">Kodi repository for beta/test versions of the Auramod Skin. This repo is for test/beta versions of my work only</description>
+        <summary lang="en">Kodi 18 repository for the Auramod Skin And ALL deps from Marcels repo Pre Matrix</summary>
+        <description lang="en">Kodi repository for the Auramod Skin And ALL deps from Marcels repo Pre Matrix</description>
         <platform>all</platform>
     </extension>
     <requires>
